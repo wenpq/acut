@@ -1,0 +1,14 @@
+<section>
+  <div ng-if="vm.statusTag=='error'">
+    <img src="/modules/urls/client/url/img/error.PNG" width="20" height="20"> {{vm.status}}
+  </div>
+  <div ng-if="vm.statusTag=='loading'">
+    <img src="/modules/urls/client/url/img/loading.gif" width="20" height="20">
+  </div>
+  <div ng-if="vm.statusTag=='success'">
+    <img src="/modules/urls/client/url/img/success.PNG" width="20" height="20"> {{vm.status}}
+  </div>
+  <div ng-if="vm.statusTag=='waiting'">
+    waiting...
+  </div>
+</section>

@@ -1,0 +1,159 @@
+<section>
+  <div id="edit-url">
+    <br>
+    <section ng-if="!vm.isEdit">
+      <div class="well">
+        <button type="button" class="btn btn-primary btn-sm" ng-click="vm.edit()">
+          <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit
+        </button>
+        <button type="button" class="btn btn-primary btn-sm">
+          <a ui-sref="urls.url.run" class="no-active">
+            <span class="glyphicon glyphicon-play-circle" aria-hidden="true"></span> Run
+          </a>
+        </button>
+
+        <div class="edit-content">
+          <table class="table table-condensed">
+            <tr>
+              <td><span class="title">Name:</span></td>
+              <td><span>{{vm.url.name}}</span></td>
+            </tr>
+            <tr>
+              <td><span class="title">URL Path:</span></td>
+              <td><span>{{vm.url.urlPath}}</span></td>
+            </tr>
+            <tr>
+              <td><span class="title">Query Parameters:</span></td>
+              <td>
+                <div class="row" ng-repeat="p in vm.url.parameters">
+                  <div class="col-md-2"><span class="title">{{p.name}}:</span></div>
+                  <div class="col-md-10">
+                    <div ng-repeat="op in p.option">
+                      <span class="parameter-option">{{op.string}}</span>
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="title">Test Configuration:</span></td>
+              <td>
+                <div class="row">
+                  <div class="col-md-3">
+                    <span class="title">Group:</span>
+                    <span>{{vm.url.group}}</span>
+                  </div>
+                  <div class="col-md-3">
+                    <span class="title">Public:</span>
+                    <span>{{vm.url.isPublic}}</span>
+                  </div>
+                  <div class="col-md-3">
+                    <span class="title">Test Type:</span>
+                    <span>{{vm.url.testType}}</span>
+                  </div>
+                  <div class="col-md-3">
+                    <span class="title">Cycles:</span>
+                    <span>{{vm.url.cycles}}</span>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="title">Create Information:</span></td>
+              <td>
+                <div class="row">
+                  <div class="col-md-6">
+                    <span class="title">Create By:</span>
+                    <span>{{vm.url.createBy}}</span>
+                  </div>
+                  <div class="col-md-6">
+                    <span class="title">Modify On:</span>
+                    <span>{{vm.url.modifyOn}}</span>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section ng-if="vm.isEdit">
+      <div class="well">
+        <button type="button" class="btn btn-primary btn-sm" ng-click="vm.save()">
+          <span class="glyphicon glyphicon-saved" aria-hidden="true"></span> save
+        </button>
+        <!--<div class="edit-content">
+          <table class="table table-condensed">
+            <tr>
+              <td><span class="title">Name:</span></td>
+              <td><a href="#" editable-text="vm.url.name" e-style="width: 400px">{{vm.url.name}}</a></td>
+            </tr>
+            <tr>
+              <td><span class="title">URL Path:</span></td>
+              <td><a href="#" editable-text="vm.url.urlPath" e-style="width: 400px">{{vm.url.urlPath}}</a></td>
+            </tr>
+            <tr>
+              <td><span class="title">Query Parameters:</span></td>
+              <td>
+                <div class="row" ng-repeat="p in vm.url.parameters">
+                  <div class="col-md-2"><span class="title">{{p.name}}:</span></div>
+                  <div class="col-md-10">
+                    <div ng-repeat="op in p.option">
+                      <span class="parameter-option">{{op.string}}</span>
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="title">Test Configuration:</span></td>
+              <td>
+                <div class="row">
+                  <div class="col-md-3">
+                    <span class="title">Group:</span>
+                    <span>{{vm.url.group}}</span>
+                  </div>
+                  <div class="col-md-3">
+                    <span class="title">Public:</span>
+                    <span>{{vm.url.isPublic}}</span>
+                  </div>
+                  <div class="col-md-3">
+                    <span class="title">Test Type:</span>
+                    <span>{{vm.url.testType}}</span>
+                  </div>
+                  <div class="col-md-3">
+                    <span class="title">Cycles:</span>
+                    <span>{{vm.url.cycles}}</span>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="title">Create Information:</span></td>
+              <td>
+                <div class="row">
+                  <div class="col-md-6">
+                    <span class="title">Create By:</span>
+                    <span>{{vm.url.createBy}}</span>
+                  </div>
+                  <div class="col-md-6">
+                    <span class="title">Modify On:</span>
+                    <span>{{vm.url.modifyOn}}</span>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </div>-->
+
+        <div class="edit-content">
+          <json-editor schema="vm.urlSchema" startval="vm.urlStartVal" on-change="vm.onChange($editorValue)"></json-editor>
+        </div>
+      </div>
+    </section>
+
+
+
+  </div>
+</section>

@@ -1,0 +1,25 @@
+<section>
+  <div class="page-header">
+    <h1>Running URL</h1>
+  </div>
+
+  <div>
+    <table class="table table-condensed">
+      <thead>
+      <th>URL</th>
+      <th>Status</th>
+      <th>Time Consumption</th>
+      </thead>
+      <tbody>
+      <tr ng-repeat="result in vm.urlResultList">
+        <td><a href="{{result.urlString}}" target="_blank">{{result.urlShortString}}</a></td>
+        <td>
+
+          <urls-status-component status="result.status"></urls-status-component>
+        </td>
+        <td>{{result.consumption}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</section>

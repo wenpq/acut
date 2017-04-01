@@ -1,0 +1,14 @@
+.title {
+  font-weight: bold;
+}
+.parameter-option {
+  float: left;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+.edit-content {
+  margin-top: 15px;
+}
+.no-active {
+  color: white;
+}
